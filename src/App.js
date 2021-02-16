@@ -1,18 +1,37 @@
 import React from "react";
-import Logo from "./components/Logo"
-import Panel from "./components/Panel"
+//import Logo from "./components/Logo"
+import Panel from "./components/Panel/Panel"
 //import Painting from "./components/Painting";   //у ехала
-import PaintingList from "./components/PaintingList";
+import PaintingList from "./components/PaintingList/PaintingList";
+import ColorPicker from "./components/ColorPicker/ColorPicker";
+import Notification from "./components/Notification/Notification";
+//import Container from "./components/Container/Container"
+//import AppBar from "./components/AppBar/AppBar"
+import Layout from "./components/Layout/Layout"
+
 import paintings from "./paintings.json";
+
 
 /*const numbers = [1,2,3,4,5];*/
 const colors = ["red", "green", "blue", "yellow"];
+
+const colorPickerOptions = [
+  { label: 'red', color: '#F44336' },
+  { label: 'green', color: '#4CAF50' },
+  { label: 'blue', color: '#2196F3' },
+  { label: 'grey', color: '#607D8B' },
+  { label: 'pink', color: '#E91E63' },
+  { label: 'indigo', color: '#3F51B5' },
+];
+           /*<h1>Главный компонент-контейнер приложения</h1>*/
+      /*<ul>{numbers.map((number)=>(<li>{number}</li>))}</ul>*/ 
+
 const App = () => {
     return (
-        <div>
-           {/*<h1>Главный компонент-контейнер приложения</h1>*/}
-      {/*<ul>{numbers.map((number)=>(<li>{number}</li>))}</ul>*/ }
-            <Panel  title="Последние новости">
+        <Layout>
+            <ColorPicker options={colorPickerOptions} />
+                  <Notification text="css-модули это не плохо" />           
+            <Panel title="Последние новости">
                 <p>Привет!</p>
                 <a href="">Читать...</a>
             </Panel>
@@ -21,8 +40,8 @@ const App = () => {
                 <p>
                    Lorem ipsum ..... 
                 </p>
-            </Panel>
-            <Logo text="Главный компонент-контейнер приложения" />
+            </Panel> 
+            {/*<Logo text="Главный компонент-контейнер приложения" />*/}
             
             <ul>
                 {colors.map((color) => (
@@ -60,7 +79,7 @@ const App = () => {
                 tag ="ractapopulous"
                 quantity={paintings[0].quantity}
     />*/}
-        </div>
+       </Layout>
     );
 };
 

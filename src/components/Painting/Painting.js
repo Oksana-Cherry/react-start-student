@@ -1,14 +1,15 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import defaultImage from "./default.jpg";
 
+import defaultImage from "./default.jpg";
+import "./Painting.css";
 
 
 const Painting = ({ url, title, profileUrl, tag, price, quantity }) => {
     const avaibility = quantity < 10 ? "заканчиваеться" : "есть в наличии"; 
     
     return (
-    <div>
+    <div className="Painting">
       <img src={url} alt={title} width="300" />
         <h2>{title}</h2>
         <p>Автор: <a href={profileUrl}>{tag}</a></p>

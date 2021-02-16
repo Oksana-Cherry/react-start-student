@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Painting from "./Painting";
-
+import Painting from "../Painting/Painting";
+import "./PaintingList.css";
 
 const PaintingList = ({ paintings }) => (
-    <ul>
+    <ul className="PaintingList">
     {paintings.map(({ id, url, title, price, author, quantity }) => (
-            <li key={id}>
+            <li key={id} className="PaintingList-item">
                 <Painting
                     url={url}
-                    title={title}//   уехала PaintingList.js
+                    title={title}//   Привет из Painting.js
                     price={price}
                     profileUrl={author.url}
                     tag={author.tag}

@@ -1,0 +1,18 @@
+@value primary-text-color from "../../vars.module.css";
+
+
+.notification{
+    line-height: 1.5;
+    padding: 10px 20px;
+    color: primary-text-color;
+}
+
+.error{
+    composes: notification;
+    background-color: aquamarine;
+    color: white;
+}
+.success{
+  background-color: yellow;
+  color: blueviolet;
+}

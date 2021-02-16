@@ -1,10 +1,18 @@
 import React from "react";
 import PropTypes from 'prop-types';
-const styles = {
-    outline: '1px solid tomato'
-}
+import styles from "./Panel.module.css";
+console.log(styles);
+
+/*const styles = {
+    container: {
+        width: 200,
+        border:'2px solid tomato',
+        borderColor: 'red',
+        backgroundColor: 'green'
+    }
+}*/
 const Panel = ({title, children}) => (
-    <div style={styles}>Панел
+    <div className={styles.container}>{/*style={styles.container}*/}
         {title && <h2>{title}</h2>}{/* если да слева то рендер. справа<h2>{title}</h2>*/}
         {children}
     </div>
